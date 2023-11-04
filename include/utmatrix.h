@@ -221,7 +221,7 @@ public:
   TMatrix& operator= (const TMatrix &mt);        // присваивание
   TMatrix  operator+ (const TMatrix &mt);        // сложение
   TMatrix  operator- (const TMatrix &mt);        // вычитание
-  TMatrix operator*(const TMatrix& mt);
+  //TMatrix operator*(const TMatrix& mt);
 
   // ввод / вывод
   friend istream& operator>>(istream &in, TMatrix &mt)
@@ -243,7 +243,7 @@ public:
 template <class ValType>
 TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType>>(s)
 {
-	if (s > MAX_MATRIX_SIZE) {
+	if (s > MAX_MATRIX_SIZE||s < 1) {
 		throw exception("wrong size");
 	}
 	Size = s;
